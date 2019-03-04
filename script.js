@@ -3,20 +3,13 @@ function encrypt(){
   if (file) {
       var reader = new FileReader();
       reader.readAsText(file, "UTF-8");
-      // reader.onload = function (evt) {
-      //     var seed = evt.target.result;
-      //     document.getElementById("seed").innerHTML = seed;
-      //     const digest = crypto.subtle.digest('SHA-256', seed);
-      //     console.log(digest)
-      //     document.getElementById("digest").innerHTML = digest;
-      // }
-      // reader.onerror = function (evt) {
-      //     document.getElementById("seed").innerHTML = "error reading file";
-      // }
       reader.onload = function (evt) {
           var seed = evt.target.result;
+          document.getElementById("seed").innerHTML = seed;
           console.log(seed);
-          console.log(SHA256(seed))
+          var digest = SHA256(seed);
+          console.log(digest)
+          document.getElementById("digest").innerHTML = digest;
       }
   }
 }
