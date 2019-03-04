@@ -7,6 +7,7 @@ function decypher(){
           var cypher = evt.target.result;
           document.getElementById("cypher").innerHTML = cypher;
           const digest = crypto.subtle.digest('SHA-256', cypher);
+          console.log(digest)
           document.getElementById("digest").innerHTML = digest;
       }
       reader.onerror = function (evt) {
