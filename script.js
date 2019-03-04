@@ -1,4 +1,4 @@
-function decypher(){
+function encrypt(){
   var file = document.getElementById("file").files[0];
   if (file) {
       var reader = new FileReader();
