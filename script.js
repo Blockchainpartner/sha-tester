@@ -1,4 +1,4 @@
-require("CryptoJS");
+var CryptoJS = require("CryptoJS");
 
 function encrypt(){
   var file = document.getElementById("file").files[0];
