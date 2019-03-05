@@ -12,20 +12,15 @@ function encrypt(){
   //         document.getElementById("digest").innerHTML = digest;
   //     }
   // }
+  var file = event.target.files[0];
   var reader = new FileReader();
-
-  // If we use onloadend, we need to check the readyState.
-  reader.onloadend = function(evt) {
-    if (evt.target.readyState == FileReader.DONE) { // DONE == 2
-
-      var wordArray = CryptoJS.lib.WordArray.create(e.target.result);
-      var digest = CryptoJS.SHA256(wordArray);
-      document.getElementById("digest").innerHTML = digest;
-    }
+  reader.onload = function (event) {
+     var data = event.target.result;
+     var digest = CryptoJS.SHA256( data );
+     console.log('encrypted: ' + digest);
+     document.getElementById("digest").innerHTML = digest;
   };
-
-  var blob = file.slice(start, stop + 1);
-  reader.readAsArrayBuffer(blob);
+  reader.readAsBinaryString(file);
 }
 
 
