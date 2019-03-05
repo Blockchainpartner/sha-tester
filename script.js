@@ -12,7 +12,6 @@ function encrypt(){
   //         document.getElementById("digest").innerHTML = digest;
   //     }
   // }
-  var file = event.target.files[0];
   var reader = new FileReader();
   reader.onload = function (event) {
      var data = event.target.result;
