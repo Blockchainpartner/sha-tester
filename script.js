@@ -15,8 +15,7 @@ function encrypt(){
   var reader = new FileReader();
   reader.onload = function (event) {
      var data = event.target.result;
-     var wa = CryptoJS.lib.WordArray.create(data);
-     var digest = CryptoJS.SHA256( wa );
+     var digest = CryptoJS.SHA256( data );
      console.log('encrypted: ' + digest);
      document.getElementById("digest").innerHTML = digest;
   };
