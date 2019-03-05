@@ -1,17 +1,33 @@
+require("CryptoJS");
+
 function encrypt(){
   var file = document.getElementById("file").files[0];
-  if (file) {
-      var reader = new FileReader();
-      reader.readAsText(file);
-      reader.onload = function (evt) {
-          var seed = evt.target.result;
-          // document.getElementById("seed").innerHTML = seed;
-          // console.log(seed);
-          var digest = SHA256(seed);
-          console.log(digest)
-          document.getElementById("digest").innerHTML = digest;
-      }
-  }
+  // if (file) {
+  //     var reader = new FileReader();
+  //     reader.readAsText(file);
+  //     reader.onload = function (evt) {
+  //         var seed = evt.target.result;
+  //         // document.getElementById("seed").innerHTML = seed;
+  //         // console.log(seed);
+  //         var digest = SHA256(seed);
+  //         console.log(digest)
+  //         document.getElementById("digest").innerHTML = digest;
+  //     }
+  // }
+  var reader = new FileReader();
+
+  // If we use onloadend, we need to check the readyState.
+  reader.onloadend = function(evt) {
+    if (evt.target.readyState == FileReader.DONE) { // DONE == 2
+
+      var wordArray = CryptoJS.lib.WordArray.create(e.target.result);
+      var digest = CryptoJS.SHA256(wordArray);
+      document.getElementById("digest").innerHTML = digest;
+    }
+  };
+
+  var blob = file.slice(start, stop + 1);
+  reader.readAsArrayBuffer(blob);
 }
 
 

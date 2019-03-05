@@ -4,6 +4,9 @@
 
     {% if site.google_analytics %}
       <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha256.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/crypto-js@3.1.9-1/index.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/combine/npm/crypto-js@3.1.9-1/crypto-js.min.js,npm/crypto-js@3.1.9-1,npm/crypto-js@3.1.9-1/aes.min.js,npm/crypto-js@3.1.9-1/cipher-core.min.js,npm/crypto-js@3.1.9-1/core.min.js,npm/crypto-js@3.1.9-1/enc-base64.min.js,npm/crypto-js@3.1.9-1/enc-hex.min.js,npm/crypto-js@3.1.9-1/enc-latin1.min.js"></script>
       <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -35,7 +38,7 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <h2>SHA Tester 1.4</h2>
+      <h2>SHA Tester 1.5</h2>
       <p>Upload a file to encrypt</p>
       <input type="file" id="file"/>
       <button onclick="encrypt()">Encrypt</button>
