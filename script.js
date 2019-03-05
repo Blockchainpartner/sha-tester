@@ -2,9 +2,9 @@ function encrypt(){
   var file = document.getElementById("file").files[0];
   if (file) {
       var reader = new FileReader();
-      reader.readAsDataURL(file);
+      reader.readAsArrayBuffer(file);
       reader.onload = function (evt) {
-          var seed = JSON.stringify(evt.target.result);
+          var seed = evt.target.result;
           // document.getElementById("seed").innerHTML = seed;
           // console.log(seed);
           var digest = SHA256(seed);
