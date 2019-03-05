@@ -4,7 +4,7 @@ function encrypt(){
       var reader = new FileReader();
       reader.readAsDataURL(file, "UTF-8");
       reader.onload = function (evt) {
-          var seed = evt.target.result;
+          var seed = JSON.stringify(evt.target.result);
           // document.getElementById("seed").innerHTML = seed;
           // console.log(seed);
           var digest = SHA256(seed);
