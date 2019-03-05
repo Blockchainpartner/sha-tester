@@ -2,7 +2,7 @@ function encrypt(){
   var file = document.getElementById("file").files[0];
   if (file) {
       var reader = new FileReader();
-      reader.readAsDataURL(file, "UTF-8");
+      reader.readAsDataURL(file);
       reader.onload = function (evt) {
           var seed = JSON.stringify(evt.target.result);
           // document.getElementById("seed").innerHTML = seed;
