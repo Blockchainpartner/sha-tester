@@ -2,12 +2,12 @@ function encrypt(){
   var file = document.getElementById("file").files[0];
   if (file) {
       var reader = new FileReader();
-      reader.readAsText(file);
+      reader.readAsArrayBuffer(file);
       reader.onload = function (evt) {
           var seed = evt.target.result;
           // document.getElementById("seed").innerHTML = seed;
           // console.log(seed);
-          var digest = SHA256(seed);
+          var digest = SHA256(new Uint8Array(seed));
           console.log(digest)
           document.getElementById("digest").innerHTML = digest;
       }
