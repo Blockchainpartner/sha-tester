@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default:'en-US' }}">
   <head>
 
     {% if site.google_analytics %}
@@ -21,10 +21,8 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
-
     <header class="page-header" role="banner">
-      <h1 class="project-name">SHA256 encryptor tester</h1>
+      <h1 class="project-name">SHA256 Tester</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
@@ -36,13 +34,16 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <h2>SHA Tester 1.7.4</h2>
-      <p>Upload a file to encrypt</p>
+      <h2>SHA256 Hash Generator</h2>
+      <p>Select a file to locally generate its hash.<br/>
+        The file won't live your device ! You may even use this website offline.
+      </p>
       <input type="file" id="file"/>
-      <button onclick="encrypt()">Encrypt</button>
+      <button onclick="encrypt()">Generate Hash</button>
 
       <div>
-        <h2>Digest:</h2>
+        <br/>
+        <h2>Hash:</h2>
         <p id="digest"></p>
       </div>
 
