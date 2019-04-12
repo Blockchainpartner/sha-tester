@@ -14,7 +14,7 @@ function encrypt(){
       console.log('100%');
       var encrypted = SHA256.finalize().toString();
       console.log('encrypted: ' + encrypted);
-      document.getElementById("digest").innerHTML = encrypted;
+      document.getElementById("digest").innerHTML = "0x" + encrypted;
    });
 }
 
